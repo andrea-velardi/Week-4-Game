@@ -44,6 +44,7 @@ body{
     height: 100%; 
     float: right; 
     background-color: thistle; 
+    font-size: 15px; 
 }
 
 #parentGameButtons{
@@ -68,7 +69,7 @@ body{
     position: relative; 
 }
 
-.score{
+.scoreDisplayChild{
     margin: 25px auto auto 10px; 
     width: 100%; 
     height: 25%; 
