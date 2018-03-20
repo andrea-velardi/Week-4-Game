@@ -21,6 +21,16 @@ var loss = 0;
 var finalScore; 
 
 //Functions
+document.onreadystatechange = function () {
+    var state = document.readyState;
+
+    if(state == 'complete'){
+        console.log('ReadyState');
+        reset()
+    }
+}
+
+
 function reset(){
     randNum = Math.floor(Math.random() * (120 - 19) + 19);
     console.log('randomNumber = ' + randNum); 
@@ -30,8 +40,8 @@ function reset(){
     crys4 = Math.floor(Math.random() * (12 - 1) +1)
     finalScore = 0; 
 
-    $('ranNumBox').html(randNum); 
-    $('scoreDisplayChild').html(finalScore);
+    $('.ranNumBox').html(randNum); 
+    $('.scoreDisplay').html(finalScore);
     start();  
 }
 
@@ -48,7 +58,7 @@ function start(){
 
     //jQuery grabbing the html
     $('ranNumBox').html(randNum); 
-    $('scoreDisplayChild').html(finalScore); 
+    $('scoreDisplay').html(finalScore); 
 
     //and this give each skull a random value
     $('.crystal1').attr('value', crys1); 
@@ -74,20 +84,20 @@ function start(){
         finalScore = parseInt(finalScore) + parseInt(test1); 
         console.log('Crystal*  ' + test1); 
         console.log('finalScore***  ' + finalScore); 
-        $('.scoreDisplayChild').html(finalScore); 
+        $('.scoreDisplay').html(finalScore); 
 
         if(randNum === finalScore){
             alert('win'); 
             win++; 
             $('.win').html(win); 
-            $('scoreDisplayChild').html(0); 
+            $('scoreDisplay').html(0); 
             reset(); 
         }
         else if (finalScore > randNum){
             alert('loser'); 
             loss++; 
             $('.loss').html(loss); 
-            $('.scoreDisplayChild').html(0); 
+            $('.scoreDisplay').html(0); 
             reset(); 
         }
     
